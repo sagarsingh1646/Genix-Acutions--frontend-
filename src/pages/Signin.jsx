@@ -100,7 +100,7 @@ const SignIn = () => {
           <SocialSignUp />
           <p className="text-center text-sm text-gray-500">
             Don’t have an Account?{" "}
-            <a href="#" className="text-blue-600">
+            <a href="/signup" className="text-blue-600">
               Sign up here
             </a>
           </p>
