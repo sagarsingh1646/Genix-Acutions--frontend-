@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import { useRecoilState } from "recoil";
 import { authState } from "../recoil/authState";
+import BidOverlay from "../components/BidOverlay";
 
 
 const AuctionDetails = () => {
@@ -17,7 +18,7 @@ const AuctionDetails = () => {
   const [bids, setBids] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isLogged, setIsLogged] = useRecoilState(authState)
-  const userId = "Arnab45";
+  const [isOverlayOpen, setOverlayOpen] = useState(false);
 
   console.log("isLogged from  auction details", isLogged)
 
@@ -26,11 +27,11 @@ const AuctionDetails = () => {
     const fetchAuctionDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3002/api/v1/auctions/${auctionId}`
+          `http://13.201.80.101:3002/api/v1/auctions/${auctionId}`
         );
         setAuctionData(response.data);
         const bidResponse = await axios.get(
-          `http://localhost:3002/api/v1/bids/${auctionId}`
+          `http://13.201.80.101:3002/api/v1/bids/${auctionId}`
         );
         setBids(bidResponse.data);
         setLoading(false);
@@ -67,7 +68,7 @@ const AuctionDetails = () => {
       <div id="main div" className="mx-48 mt-10 flex gap-6">
         <div id="back button" className="">
         <button
-      className="mb-10 text-blueDark flex items-center"
+      className="mb-10 mr-36 text-blueDark flex items-center"
       onClick={() => window.history.back()}
     >
       <img 
@@ -104,7 +105,7 @@ const AuctionDetails = () => {
                 Description
               </h3>
               <p
-                className="text-gray-600 mt-8"
+                className="text-gray-600 mt-8 "
                 style={{
                   fontFamily: "Manrope",
                   fontSize: "16px",
@@ -177,26 +178,27 @@ const AuctionDetails = () => {
               </div>
             </div>
           </div>
-          {/* <div id="bid-list" className="">
+          <div id="bid-list" className="pl-20 pr-25">
           <ul className="mt-14">
               {bids.map((bid) => (
-                <li key={bid._id} className="mt-8" style={{ fontFamily: "Manrope", fontSize: "16px", fontWeight: 400, lineHeight: "20px", textAlign: "left"}}>
-                  {bid.bidder && bid.bidder._id === userId ? (
+                <li key={bid._id} className="mt-8  " style={{ fontFamily: "Manrope", fontSize: "16px", fontWeight: 400, lineHeight: "20px", textAlign: "left"}}>
+                  {bid.bidder && bid.bidder._id === "" ? (
                     <strong>Your bid is ${bid.amount}</strong>
                   ) : (
-                    `${bid.bidder ? bid.bidder.username : 'Anonymous'} bids $${bid.amount}`
+                    `• ${bid.bidder ? bid.bidder.firstName : 'Anonymous'} bids $${bid.amount}`
                   )}
                 </li>
               ))}
             </ul>
-            <div>
+            <div className="mt-4">
             <Link to={`/auctions/${auctionId}`}>
-                        <button className="mt-4 w-full bg-gradient-to-r from-[#DB2721] to-[#5AD7FE] text-white py-2 rounded-lg">
+                        <button onClick={() => setOverlayOpen(true)} className="mt-4 w-full bg-gradient-to-r from-[#1D4ED8] to-[#5AD7FE] text-white py-2 rounded-lg px-10">
                             Bid now &nbsp; →
                         </button>
                     </Link>
             </div>
-          </div> */}
+            <BidOverlay auctionTitle={auctionData.title} timeRemaining={auctionData.endDate} currentBid={auctionData.currentBid} minimumBid={auctionData.startingBid} auctionId={auctionId} isOpen={isOverlayOpen} onClose={() => setOverlayOpen(false)} /> {/* Overlay component */}
+          </div>
         </div>
       </div>
     </>

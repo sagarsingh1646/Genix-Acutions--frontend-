@@ -10,7 +10,7 @@ const ExploreIntro = () => {
   useEffect(() => {
     const fetchAuctions = async () => {
       try {
-        const response = await fetch("http://localhost:3002/api/v1/auctions");
+        const response = await fetch("http://13.201.80.101:3002/api/v1/auctions");
         const data = await response.json();
         setAuctions(data);
       } catch (error) {
@@ -66,21 +66,21 @@ const ExploreIntro = () => {
         </div>
 
         {/* Right Section: Image and Speech Bubbles */}
-        <div className="absolute bottom-[14rem] right-[30rem]">
+        <div className="absolute lg:bottom-[14rem] lg:right-[30rem]">
           <img
             src={girlImage}
             alt="Girl with phone"
-            className="relative z-10 w-[920px] h-[620px]"
+            className="relative z-10 lg:w-[920px] lg:h-[620px]"
           />
 
           {/* Speech Bubble 1 */}
-          <div className="absolute top-0 right-20 bg-white shadow-lg rounded-lg p-4 flex items-center space-x-2 z-20">
+          {/* <div className="absolute top-0 right-20 bg-white shadow-lg rounded-lg p-4 flex items-center space-x-2 z-20">
             <img src="" alt="User avatar" className="w-8 h-8 rounded-full" />
             <span className="text-sm text-gray-700">Overall Fantastic!</span>
-          </div>
+          </div> */}
 
           {/* Speech Bubble 2 */}
-          <div className="absolute bottom-36 left-[10rem] bg-purple-500 text-white shadow-lg rounded-lg p-4 flex items-center space-x-2 z-20">
+          <div className="absolute lg:bottom-36 lg:left-[10rem] bg-purple-500 text-white shadow-lg rounded-lg p-4 flex items-center space-x-2 z-20">
             <img
               src={profilePhoto}
               alt="User avatar"
@@ -90,7 +90,7 @@ const ExploreIntro = () => {
               Seamless, lightweight! Loving this site.
             </span>
           </div>
-          <div className="flex absolute top-[10rem] right-[42rem] w-7 h-4">
+          <div className="flex absolute lg:top-[10rem] lg:right-[42rem] w-7 h-4">
             <div className="relative">
               <div class="w-64 h-32 bg-[#5C28D4] rounded-tl-full "></div>
             </div>

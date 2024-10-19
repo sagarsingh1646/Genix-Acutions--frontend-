@@ -1,5 +1,5 @@
 export const signupUser = async (userData) => {
-    const response = await fetch('http://localhost:3002/api/v1/auth/signup', {
+    const response = await fetch('http://13.201.80.101:3002/api/v1/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ export const signupUser = async (userData) => {
   };
 
   export const signinUser = async (userData) => {
-    const response = await fetch('http://localhost:3002/api/v1/auth/login', {
+    const response = await fetch('http://13.201.80.101:3002/api/v1/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
