@@ -25,8 +25,6 @@ const Navbar = ({ isLogged, colour }) => {
         {/* Right Side - Navigation and Buttons */}
         {colour === "pink" && (
           <div className="hidden md:flex items-center space-x-6">
-            {isLogged && (
-              <>
                 {/* Navigation Links */}
                 <ul className={`flex space-x-4 ${textColor}`}>
                   <li>
@@ -140,10 +138,6 @@ const Navbar = ({ isLogged, colour }) => {
                 </a>
                     </>
                 )}
-
-
-              </>
-            )}
 
             {/* Profile Photo for Logged-In Users */}
             {isLogged && (

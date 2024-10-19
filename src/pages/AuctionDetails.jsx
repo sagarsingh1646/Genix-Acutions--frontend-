@@ -7,6 +7,8 @@ import LeftArrow from '../assets/left-arrow.png'
 import StarImage from '../assets/star.png'
 import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
+import { useRecoilState } from "recoil";
+import { authState } from "../recoil/authState";
 
 
 const AuctionDetails = () => {
@@ -14,7 +16,12 @@ const AuctionDetails = () => {
   const [auctionData, setAuctionData] = useState(null);
   const [bids, setBids] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isLogged, setIsLogged] = useRecoilState(authState)
   const userId = "Arnab45";
+
+  console.log("isLogged from  auction details", isLogged)
+
+
   useEffect(() => {
     const fetchAuctionDetails = async () => {
       try {
@@ -55,7 +62,7 @@ const AuctionDetails = () => {
   return (
     <>
       <div>
-        <Navbar isLogged={true} colour={"pink"}/>
+        <Navbar isLogged={isLogged} colour={"pink"}/>
       </div>
       <div id="main div" className="mx-48 mt-10 flex gap-6">
         <div id="back button" className="">

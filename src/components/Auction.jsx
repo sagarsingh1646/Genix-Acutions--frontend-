@@ -28,7 +28,7 @@ const Auction = ({
         const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
         const minutes = Math.floor((totalSeconds % 3600) / 60);
 
-        setTimeRemaining(`${days} day${days !== 1 ? 's' : ''} ${hours} hr${hours !== 1 ? 's' : ''} ${minutes} minute${minutes !== 1 ? 's' : ''}`);
+        setTimeRemaining(`${days} day${days !== 1 ? 's' : ''} ${hours} hr${hours !== 1 ? 's' : ''} ${minutes} min${minutes !== 1 ? 's' : ''}`);
     };
 
     useEffect(() => {
@@ -49,7 +49,7 @@ const Auction = ({
                 </button>
             </div>
 
-            <div className="p-4">
+            <div className="p-1">
                 <span className="inline-block text-xs text-white font-semibold bg-[#21A67A] py-[4.5px] px-[12px] rounded-md opacity-100">
                     Live Auction
                 </span>
