@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import VectorLogo from '../assets/Vector.png';
 import DownArrow from '../assets/down-arrow1.png';
 import LanguageIcon from '../assets/language-Icon.png';
@@ -13,14 +14,14 @@ const Navbar = ({ isLogged, colour }) => {
     <nav className={`${bgColor} ${border} px-4 md:px-32 py-4`}>
       <div className="container mx-auto flex items-center justify-between">
         {/* Left Side - Logo */}
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <img
             src={VectorLogo}
             alt="Genix Auctions Logo"
             className="h-8"
           />
           <span className="text-xl font-semibold">Genix Auctions</span>
-        </div>
+          </Link>
 
         {/* Right Side - Navigation and Buttons */}
         {colour === "pink" && (
@@ -112,7 +113,7 @@ const Navbar = ({ isLogged, colour }) => {
                 {!isLogged &&(
                     <>
                     <a
-                  href="#"
+                  href="/signin"
                   className="text-[#1D4ED8] font-medium"
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
@@ -125,7 +126,7 @@ const Navbar = ({ isLogged, colour }) => {
                   Login
                 </a>
                 <a
-                  href="#"
+                  href="/signup"
                   className="px-4 py-2 text-white rounded"
                   style={{
                     background: "linear-gradient(79.69deg, #1D4ED8 -0.64%, #5AD7FE 107.84%)",

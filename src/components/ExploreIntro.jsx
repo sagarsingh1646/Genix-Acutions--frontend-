@@ -21,12 +21,12 @@ const ExploreIntro = () => {
     fetchAuctions();
   }, []);
   return (
-    <div className="bg-white pt-16">
+    <div className="bg-white pt-12">
       {" "}
       {/* White background for entire section */}
       <div className="flex flex-col md:flex-row justify-between items-center px-40">
         {/* Left Section: Text */}
-        <div className="text-left max-w-lg">
+        <div className="text-left max-w-lg mb-48">
           <div className="font-inter text-left text-6xl leading-tight font-normal">
             <span>Your Gateway</span>
             <br />
@@ -66,7 +66,7 @@ const ExploreIntro = () => {
         </div>
 
         {/* Right Section: Image and Speech Bubbles */}
-        <div className="absolute lg:bottom-[14rem] lg:right-[30rem]">
+        <div className="relative lg:bottom-[2rem] lg:right-[20rem]">
           <img
             src={girlImage}
             alt="Girl with phone"
@@ -106,7 +106,7 @@ const ExploreIntro = () => {
         </div>
       </div>
       {/* Explore Auction Section */}
-      <div className="mt-48 px-40">
+      <div className="px-40">
         <h2 className="text-4xl font-bold mb-4">
           <span>Explore </span>
           <span className="text-blue-600">Auctions</span>
