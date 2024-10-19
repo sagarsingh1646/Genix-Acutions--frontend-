@@ -49,7 +49,7 @@ const Auction = ({
                 </button>
             </div>
 
-            <div className="p-1">
+            <div className="p-1 pt-4">
                 <span className="inline-block text-xs text-white font-semibold bg-[#21A67A] py-[4.5px] px-[12px] rounded-md opacity-100">
                     Live Auction
                 </span>

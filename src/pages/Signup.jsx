@@ -31,7 +31,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar isLogged={false} colour="white" />
-      <div className="flex flex-1 justify-center items-start mt-10 px-4 lg:mx-48 lg:gap-40">
+      <div className="flex flex-1 justify-center items-start mt-10 px-4 tablet:mx-36 desktop:mx-48 desktop:gap-40">
         <div className="w-full max-w-md p-6 bg-white rounded-lg lg:w-[440px]">
           <h2
             className="text-[22px] font-bold leading-[30.05px] text-left mb-4"
@@ -47,7 +47,7 @@ const SignUp = () => {
             be eligible to bid in the auction.
           </p>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+            <div className="">
               <label
                 className="block text-sm font-medium text-gray-700"
                 htmlFor="firstName"
@@ -142,11 +142,11 @@ const SignUp = () => {
             </a>
           </p>
         </div>
-        <div className="hidden lg:block flex-1 ml-20 mt-10">
+        <div className="hidden lg:block flex-1 tablet:ml-44 desktop:ml-20 tablet:mt-24 desktop:mt-24">
           <img
             src={Illustration}
             alt="Illustration"
-            className="w-full h-auto max-w-md lg:max-w-[620px] lg:h-[573px]"
+            className="w-full h-auto max-w-md tablet:w-[620px] desktop:w-[620px] desktop:h-[523px]"
           />
         </div>
       </div>

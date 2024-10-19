@@ -65,10 +65,10 @@ const AuctionDetails = () => {
       <div>
         <Navbar isLogged={isLogged} colour={"pink"}/>
       </div>
-      <div id="main div" className="mx-48 mt-10 flex gap-6">
+      <div id="main div" className="tablet:mx-24 desktop:mx-48 mt-10 flex gap-6">
         <div id="back button" className="">
         <button
-      className="mb-10 mr-36 text-blueDark flex items-center"
+      className="mb-10 desktop:mr-36 text-blueDark flex items-center"
       onClick={() => window.history.back()}
     >
       <img 
@@ -78,7 +78,8 @@ const AuctionDetails = () => {
       />
       Back to catalog
     </button>
-          <Auction
+        <div className="">
+        <Auction
             startingBid={auctionData.startingBid}
             currentBid={auctionData.currentBid}
             endDate={auctionData.endDate}
@@ -89,9 +90,10 @@ const AuctionDetails = () => {
             showBorder={false}
           />
         </div>
+        </div>
         <div id="sub-main-div" className="flex gap-6">
           <div>
-            <div className="max-w-4xl text-justify">
+            <div className="tablet:max-w-2xl desktop:max-w-4xl text-justify">
               <h3
                 className="mb-4"
                 style={{
@@ -178,7 +180,7 @@ const AuctionDetails = () => {
               </div>
             </div>
           </div>
-          <div id="bid-list" className="pl-20 pr-25">
+          <div id="bid-list" className="tablet:pl-10 desktop:pl-20 pr-25">
           <ul className="mt-14">
               {bids.map((bid) => (
                 <li key={bid._id} className="mt-8  " style={{ fontFamily: "Manrope", fontSize: "16px", fontWeight: 400, lineHeight: "20px", textAlign: "left"}}>

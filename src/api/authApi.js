@@ -6,12 +6,12 @@ export const signupUser = async (userData) => {
       },
       body: JSON.stringify(userData),
     });
-  
+    const data = await response.json();
     if (!response.ok) {
-      throw new Error('Signup failed');
+      throw new Error(data.message);
     }
   
-    const data = await response.json();
+    
     return data.token;
   };
 
@@ -23,12 +23,14 @@ export const signupUser = async (userData) => {
       },
       body: JSON.stringify(userData),
     });
+
+    const data = await response.json();
   
     if (!response.ok) {
-      throw new Error('Signin failed');
+      console.log(response)
+      throw new Error(data.message);
     }
   
-    const data = await response.json();
     return data.token;
   };
   

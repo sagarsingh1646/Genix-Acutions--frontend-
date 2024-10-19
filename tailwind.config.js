@@ -13,6 +13,17 @@ export default {
       fontFamily: {
         'plus-jakarta': ['Plus Jakarta Sans', 'sans-serif'],
       },
+      screens: {
+        'sm': '640px',  
+        'md': '768px',  
+        'lg': '1024px', 
+        'xl': '1280px', 
+        '2xl': '1536px',
+        // Custom breakpoints
+        'tablet': '600px', // Custom breakpoint for tablets
+        'laptop': '900px',  // Custom breakpoint for laptops
+        'desktop': '1450px', // Custom breakpoint for desktops
+      },
     },
   },
   plugins: [],

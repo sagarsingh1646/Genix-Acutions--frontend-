@@ -31,7 +31,7 @@ const SignIn = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar isLogged={false} colour="white" />
-      <div className="flex flex-1 justify-center items-start mt-10 mx-48 gap-40">
+      <div className="flex flex-1 justify-center items-start mt-10 tablet:mt-0 desktop:mt-10 tablet:mx-32 tablet:gap-10 desktop:mx-48 desktop:gap-40">
         <div className="w-[440px] p-6 bg-white rounded-lg mt-20">
           <h2
             className="text-[22px] font-bold leading-[30.05px] text-left mb-4"
@@ -86,7 +86,7 @@ const SignIn = () => {
               type="submit"
               className="w-full bg-gradient-to-r from-blue-600 to-blue-400 text-white p-2 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-500"
             >
-              Submit
+              Continue
             </button>
             {errors.apiError && (
               <p className="text-red-500 text-sm mt-2">{errors.apiError}</p>
@@ -105,11 +105,11 @@ const SignIn = () => {
             </a>
           </p>
         </div>
-        <div className="hidden lg:block flex-1 ml-20 ">
+        <div className="hidden lg:block flex-1 desktop:ml-15">
           <img
             src={Illustration}
             alt="Illustration"
-            className="w-[929px] h-[566px]"
+            className="w-[929px] h-[566px] lg:w-[929px] tablet:h-[30rem] tablet:mt-16 desktop:h-[556px] desktop:pt-0"
           />
         </div>
       </div>

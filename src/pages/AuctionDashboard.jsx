@@ -49,7 +49,7 @@ const AuctionDashboard = () => {
         <div>
             <Navbar isLogged={isLogged} colour={"pink"} />
             <div className="bg-gray-100 min-h-screen">
-                <div className="mx-auto py-10 px-60">
+                <div className="mx-auto py-10 desktop:px-60 tablet:px-36">
                     <h1 className="text-3xl font-bold text-gray-900 mb-6">
                         Welcome <span className="text-blue-600">{userName}!</span>
                     </h1>
