@@ -17,13 +17,13 @@ const SignupSuccess = () => {
       <Navbar isLogged={false} colour="white" />
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col justify-center items-center text-center px-4">
+      <div className="flex-1 flex flex-col justify-center items-center tablet:pt6 desktop:pt-14 text-center px-4">
         {/* Title */}
         <h1
-          className="text-left font-extrabold leading-[54.64px] mb-4"
+          className="text-left font-extrabold text-4xl leading-[54.64px] mb-4"
           style={{
             fontFamily: "Manrope, sans-serif",
-            fontSize: "40px",
+            // fontSize: "40px",
           }}
         >
           Uncover Deals, Unleash Excitement:{" "}
@@ -46,7 +46,7 @@ const SignupSuccess = () => {
         <img
           src={Illustration}
           alt="Success Illustration"
-          className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] h-auto mb-8"
+          className="w-[200px] sm:w-[300px] tablet:w-[300px] desktop:w-[500px] h-auto mb-8"
         />
 
         {/* Login Button */}
@@ -56,7 +56,7 @@ const SignupSuccess = () => {
       </div>
 
       {/* Small Shapes - Decorative */}
-      <div className="absolute top-0 right-0 mt-20 mr-20">
+      <div className="absolute top-40 right-0 mt-20 mr-20">
         <img
           src={SmallShapes}
           alt="Decorative shapes"
