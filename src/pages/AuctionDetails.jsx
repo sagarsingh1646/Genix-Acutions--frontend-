@@ -27,11 +27,11 @@ const AuctionDetails = () => {
     const fetchAuctionDetails = async () => {
       try {
         const response = await axios.get(
-          `http://13.201.80.101:3002/api/v1/auctions/${auctionId}`
+          `https://whisperoo.in/api/v1/auctions/${auctionId}`
         );
         setAuctionData(response.data);
         const bidResponse = await axios.get(
-          `http://13.201.80.101:3002/api/v1/bids/${auctionId}`
+          `https://whisperoo.in/api/v1/bids/${auctionId}`
         );
         setBids(bidResponse.data);
         setLoading(false);

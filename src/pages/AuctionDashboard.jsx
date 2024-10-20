@@ -12,7 +12,7 @@ const AuctionDashboard = () => {
     useEffect(() => {
         const fetchAuctions = async () => {
             try {
-                const response = await fetch('http://13.201.80.101:3002/api/v1/auctions');
+                const response = await fetch('https://whisperoo.in/api/v1/auctions');
                 const data = await response.json();
                 setAuctions(data);
             } catch (error) {
@@ -23,7 +23,7 @@ const AuctionDashboard = () => {
         const fetchUserDetails = async () => {
             const authToken = localStorage.getItem('authToken');
             try {
-                const response = await fetch('http://13.201.80.101:3002/api/v1/users/me', {
+                const response = await fetch('https://whisperoo.in/api/v1/users/me', {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${authToken}`, // Pass the token in Authorization header
