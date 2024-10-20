@@ -9,6 +9,8 @@ const Navbar = ({ isLogged, colour }) => {
   const bgColor = colour === "pink" ? "bg-customPink" : "bg-white";
   const textColor = colour === "pink" ? "text-black" : "text-gray-800";
   const border = colour !== "pink" ? "border-b" : "border-b-0";
+  const token = localStorage.getItem('authToken'); 
+  const isAuthenticated = !!token; 
 
   return (
     <nav className={`fixed top-0 w-full z-50 ${bgColor} ${border} px-4 md:px-32 py-4`}>
@@ -94,7 +96,7 @@ const Navbar = ({ isLogged, colour }) => {
             </div>
 
             {/* Login and Get Started Buttons */}
-            {!isLogged && (
+            {!isAuthenticated && (
               <>
                 <Link
                   to="/signin"
@@ -125,7 +127,7 @@ const Navbar = ({ isLogged, colour }) => {
             )}
 
             {/* Profile Photo for Logged-In Users */}
-            {isLogged && (
+            {isAuthenticated && (
               <div className="flex items-center">
                 <img src={ProfilePhoto} alt="Profile" className="w-10 h-10 rounded-full" />
               </div>
