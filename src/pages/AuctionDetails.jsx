@@ -65,7 +65,7 @@ const AuctionDetails = () => {
       <div>
         <Navbar isLogged={isLogged} colour={"pink"}/>
       </div>
-      <div id="main div" className="tablet:mx-24 desktop:mx-48 mt-10 flex gap-6">
+      <div id="main div" className="tablet:mx-24 desktop:mx-48 mt-32 flex gap-6">
         <div id="back button" className="">
         <button
       className="mb-10 desktop:mr-36 text-blueDark flex items-center"

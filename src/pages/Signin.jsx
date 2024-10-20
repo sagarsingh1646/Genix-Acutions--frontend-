@@ -116,7 +116,7 @@ const SignIn = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar isLogged={false} colour="white" />
-      <div className="flex flex-1 justify-center items-start mt-10 tablet:mt-0 desktop:mt-10 tablet:mx-32 tablet:gap-10 desktop:mx-48 desktop:gap-40">
+      <div className="flex flex-1 justify-center items-start   tablet:mt-20 desktop:mt-32 tablet:mx-32 tablet:gap-10 desktop:mx-48 desktop:gap-40">
         <div className="w-[440px] p-6 bg-white rounded-lg mt-20">
           <h2
             className="text-[22px] font-bold leading-[30.05px] text-left mb-4"

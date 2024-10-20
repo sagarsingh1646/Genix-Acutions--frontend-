@@ -31,7 +31,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar isLogged={false} colour="white" />
-      <div className="flex flex-1 justify-center items-start mt-10 px-4 tablet:mx-36 desktop:mx-48 desktop:gap-40">
+      <div className="flex flex-1 justify-center items-start tablet:mt-20 desktop:mt-28 px-4 tablet:mx-36 desktop:mx-48 desktop:gap-40">
         <div className="w-full max-w-md p-6 bg-white rounded-lg lg:w-[440px]">
           <h2
             className="text-[22px] font-bold leading-[30.05px] text-left mb-4"

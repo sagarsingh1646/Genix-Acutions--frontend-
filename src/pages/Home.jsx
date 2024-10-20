@@ -6,7 +6,9 @@ const Home = ()=> {
     return(
         <>
             <Navbar isLogged={false} colour={"pink"}/>
-            <ExploreIntro/>
+            <div className="tablet:mt-20 desktop:mt-20">
+            <ExploreIntro />
+            </div>
         </>
     )
 }
