@@ -49,7 +49,7 @@ const BidOverlay = ({
 
     try {
       const response = await axios.post(
-        "http://13.201.80.101:3002/api/v1/bids",
+        "https://whisperoo.in/api/v1/bids",
         {
           auctionId,
           bidAmount: bidAmount,
