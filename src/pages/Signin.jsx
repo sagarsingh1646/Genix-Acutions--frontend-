@@ -96,7 +96,7 @@ const SignIn = () => {
   const saveTokenToBackend = async (token) => {
     try {
       const response = await axios.post(
-        "http://localhost:3002/api/v1/auth/save-fcm-token",
+        "http://13.201.80.101:3002/api/v1/auth/save-fcm-token",
         {
           token,
           email: formData.email,
