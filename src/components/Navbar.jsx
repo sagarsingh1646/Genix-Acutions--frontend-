@@ -96,8 +96,8 @@ const Navbar = ({ isLogged, colour }) => {
             {/* Login and Get Started Buttons */}
             {!isLogged && (
               <>
-                <a
-                  href="/signin"
+                <Link
+                  to="/signin"
                   className="text-[#1D4ED8] font-medium"
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
@@ -108,9 +108,9 @@ const Navbar = ({ isLogged, colour }) => {
                   }}
                 >
                   Login
-                </a>
-                <a
-                  href="/signup"
+                </Link>
+                <Link
+                  to="/signup"
                   className="px-4 py-2 text-white rounded"
                   style={{
                     background: "linear-gradient(79.69deg, #1D4ED8 -0.64%, #5AD7FE 107.84%)",
@@ -120,7 +120,7 @@ const Navbar = ({ isLogged, colour }) => {
                   <span className="text-base font-medium leading-[20.83px] text-center">
                     Get Started
                   </span>
-                </a>
+                </Link>
               </>
             )}
 
