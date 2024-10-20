@@ -4,10 +4,10 @@ import Navbar from "./components/Navbar";
 import AuctionDashboard from "./pages/AuctionDashboard";
 import AuctionDetails from "./pages/AuctionDetails";
 import SignUp from "./pages/Signup";
-import SignIn from "./pages/SignIn";
 import SignupSuccess from "./pages/SignupSuccess";
 import Home from "./pages/Home";
 import ProtectedRoute from './components/ProtectedRoute';
+import SignIn from "./pages/Signin";
 
 function App() {
   return (
