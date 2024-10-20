@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Illustration from "../assets/Iogin-illustration.png";
 import SocialSignUp from "../components/SocialSignup";
@@ -184,9 +184,9 @@ const SignIn = () => {
           <SocialSignUp />
           <p className="text-center text-sm text-gray-500">
             Don’t have an Account?{" "}
-            <a href="/signup" className="text-blue-600">
+            <Link to="/signup" className="text-blue-600">
               Sign up here
-            </a>
+            </Link>
           </p>
         </div>
         <div className="hidden lg:block flex-1 desktop:ml-15">
