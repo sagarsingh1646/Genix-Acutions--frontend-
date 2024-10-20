@@ -25,8 +25,8 @@ const Navbar = ({ isLogged, colour }) => {
             {/* Navigation Links */}
             <ul className={`flex space-x-4 ${textColor}`}>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/auctions"
                   className="flex items-center space-x-1"
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
@@ -38,7 +38,7 @@ const Navbar = ({ isLogged, colour }) => {
                 >
                   <span>Auctions</span>
                   <img src={DownArrow} alt="Arrow Down" />
-                </a>
+                </Link>
               </li>
               <li>
                 <a
