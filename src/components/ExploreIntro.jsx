@@ -4,18 +4,21 @@ import floatingMessage from "../assets/floating-message.png";
 import profilePhoto from "../assets/profile-photo.png";
 import Auction from "./Auction";
 import Footer from "./Footer";
-import Spiral from "../assets/Spiral-1.png"
-import Rectangle1 from "../assets/Rectangle-12.png"
-import Rectangle2 from "../assets/Rectangle-13.png"
-import Rectangle3 from "../assets/Rectangle-14.png"
-import SecureIicon from "../assets/Secure-Icon.png"
+import Spiral from "../assets/Spiral-1.png";
+import Rectangle1 from "../assets/Rectangle-12.png";
+import Rectangle2 from "../assets/Rectangle-13.png";
+import Rectangle3 from "../assets/Rectangle-14.png";
+import SecureIicon from "../assets/Secure-Icon.png";
+import SpiralArrow from "../assets/spiral-arrow.png"
 
 const ExploreIntro = () => {
   const [auctions, setAuctions] = useState([]);
   useEffect(() => {
     const fetchAuctions = async () => {
       try {
-        const response = await fetch("http://13.201.80.101:3002/api/v1/auctions");
+        const response = await fetch(
+          "http://13.201.80.101:3002/api/v1/auctions"
+        );
         const data = await response.json();
         setAuctions(data);
       } catch (error) {
@@ -70,8 +73,6 @@ const ExploreIntro = () => {
           </button>
         </div>
 
-
-
         {/* Right Section: Image and Speech Bubbles */}
         <div className="relative tablet:bottom-[6rem] tablet:right-[8rem] desktop:bottom-[2rem] desktop:right-[12rem]">
           <img
@@ -79,7 +80,6 @@ const ExploreIntro = () => {
             alt="Girl with phone"
             className="relative z-10 tablet:w-[65rem] desktop:w-[920px] desktop:h-[620px]"
           />
-          
 
           {/* Speech Bubble 1 */}
           {/* <div className="absolute top-0 right-20 bg-white shadow-lg rounded-lg p-4 flex items-center space-x-2 z-20">
@@ -88,15 +88,30 @@ const ExploreIntro = () => {
           </div> */}
 
           {/* Speech Bubble 2 */}
-          <div className="absolute lg:bottom-36 lg:left-[10rem] bg-purple-500 text-white shadow-lg rounded-lg p-4 flex items-center space-x-2 z-20">
+          <div className="absolute lg:bottom-36 lg:left-[10rem] bg-[#5C28D4] text-white shadow-lg rounded-2xl p-3 flex items-center space-x-2 z-20">
             <img
               src={profilePhoto}
               alt="User avatar"
               className="w-8 h-8 rounded-full"
             />
-            <span className="text-sm">
-              Seamless, lightweight! Loving this site.
+            <span className="text-sm pr-20">
+              Seamless, lightweight!
+              <br />
+              <span> Loving this site.</span>
             </span>
+          </div>
+          {/* Speech Bubble 2 */}
+          <div className="absolute tablet:bottom-[22rem] tablet:left-[32rem] desktop:bottom-[22rem] desktop:left-[33rem] bg-white  shadow-2xl rounded-2xl p-2 flex items-center space-x-2 z-20">
+            <span className="text-sm pr-24 pl-2">
+              Overall
+              <br />
+              <span>Fantastic!</span>
+            </span>
+            <img
+              src={profilePhoto}
+              alt="User avatar"
+              className="w-8 h-8 rounded-full"
+            />
           </div>
           {/* <div className="flex absolute lg:top-[10rem] lg:right-[42rem] w-7 h-4">
             <div className="relative">
@@ -113,29 +128,46 @@ const ExploreIntro = () => {
           <div className="absolute z-0 bottom-16 left-0 w-[200px] h-[200px] bg-pink-500 rounded-full"></div> */}
         </div>
         <div className="absolute tablet:top-[26rem] tablet:right-[45rem] desktop:top-[28rem] desktop:right-[55rem]">
-            <img src={Spiral} alt="Spiral"
-                className="tablet:w-[12rem] desktop:w-[15rem] "
-            />
+          <img
+            src={Spiral}
+            alt="Spiral"
+            className="tablet:w-[12rem] desktop:w-[15rem] "
+          />
         </div>
         <div className="absolute tablet:top-[22rem] tablet:right-[15rem] desktop:top-[26rem] desktop:right-[27rem]">
-            <img src={Rectangle1} alt="Rectangle1"
-                className="tablet:w-[16rem] desktop:w-[16rem] "
-            />
+          <img
+            src={Rectangle1}
+            alt="Rectangle1"
+            className="tablet:w-[16rem] desktop:w-[16rem] "
+          />
         </div>
         <div className="absolute tablet:top-[10rem] tablet:right-[30rem] desktop:top-[15rem] desktop:right-[42rem]">
-            <img src={Rectangle2} alt="Rectangle2"
-                className="tablet:h-[16rem] desktop:h-[16rem] "
-            />
+          <img
+            src={Rectangle2}
+            alt="Rectangle2"
+            className="tablet:h-[16rem] desktop:h-[16rem] "
+          />
         </div>
         <div className="absolute tablet:top-[10rem] tablet:right-[35rem] desktop:top-[14rem] desktop:right-[47rem]">
-            <img src={Rectangle3} alt="Rectangle3"
-                className="tablet:w-[16rem] desktop:w-[18rem] "
-            />
+          <img
+            src={Rectangle3}
+            alt="Rectangle3"
+            className="tablet:w-[16rem] desktop:w-[18rem] "
+          />
         </div>
         <div className="absolute tablet:top-[7rem] tablet:right-[32rem] desktop:top-[10rem] desktop:right-[43rem]">
-            <img src={SecureIicon} alt="SecureIicon"
-                className="tablet:w-[5rem] desktop:w-[7rem] "
-            />
+          <img
+            src={SecureIicon}
+            alt="SecureIicon"
+            className="tablet:w-[5rem] desktop:w-[7rem] "
+          />
+        </div>
+        <div className="absolute tablet:top-[12rem] tablet:right-[48rem] desktop:top-[17rem] desktop:right-[61rem]">
+          <img
+            src={SpiralArrow}
+            alt="SecureIicon"
+            className="tablet:w-[3rem] desktop:w-[4rem] "
+          />
         </div>
       </div>
       {/* Explore Auction Section */}

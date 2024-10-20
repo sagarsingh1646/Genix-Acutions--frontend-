@@ -1,10 +1,16 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Illustration from "../assets/Iogin-illustration.png";
 import SocialSignUp from "../components/SocialSignup";
 import { useSignIn } from "../hooks/useSignin";
-
+import { getToken } from "firebase/messaging";
+import {
+  listenForMessagages,
+  messaging,
+  registerServiceWorker,
+} from "../utils/firebase";
+import axios from "axios";
 
 const SignIn = () => {
   const { signIn, errors } = useSignIn();
@@ -13,7 +19,9 @@ const SignIn = () => {
     password: "",
   });
 
-  const navigate = useNavigate(); 
+
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -24,7 +32,84 @@ const SignIn = () => {
     e.preventDefault();
     const success = await signIn(formData);
     if (success) {
+      // try {
+      //   registration = await navigator.serviceWorker.register(
+      //     "firebase-messaging-sw.js"
+      //   );
+      //   console.log("Service Worker registered successfully:", registration);
+      // } catch (error) {
+      //   console.error("Service Worker registration failed:", error);
+      // }
       navigate("/auctions");
+            // Request notification permission after the service worker is registered
+            await requestNotificationPermission();
+
+            // Start listening for messages
+            listenForMessagages();
+    }
+  };
+
+  const requestNotificationPermission = async () => {
+    try {
+      const permission = await Notification.requestPermission();
+      if (permission === "granted") {
+        console.log("Notification permission granted.");
+        // Register the service worker first
+        // await registerServiceWorker();
+        // Proceed to get the FCM token
+        // await requestFcmToken();
+        await requestFcmToken();
+      } else {
+        console.log("Notification permission denied.");
+      }
+    } catch (error) {
+      console.error("Error requesting notification permission:", error);
+    }
+  };
+
+  // Function to request FCM token
+  const requestFcmToken = async () => {
+    try {  
+ 
+
+        const FCMtoken = await getToken(messaging, {
+          vapidKey:
+            "BFE1pMBeoqxsfVwhnBeoK5glXC8JEL8PQZ9jhyqdkwa_yh6fZaVk2cgSlV-O3GiLnPL_xWKZOwjTNP9IybHhKMo",
+        });
+
+      console.log("FCM Token1:", FCMtoken);
+      if (FCMtoken) {
+        console.log("FCM Token:", FCMtoken);
+
+        await saveTokenToBackend(FCMtoken);
+      } else {
+        console.log(
+          "No FCM token available. Request permission to generate one."
+        );
+      }
+    } catch (error) {
+      console.error("Error getting FCM token:", error);
+    }
+  };
+
+  // Function to send the token to your backend
+  const saveTokenToBackend = async (token) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3002/api/v1/auth/save-fcm-token",
+        {
+          token,
+          email: formData.email,
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Token saved successfully");
+      } else {
+        console.log("Failed to save token");
+      }
+    } catch (error) {
+      console.error("Error saving token to backend:", error);
     }
   };
 
