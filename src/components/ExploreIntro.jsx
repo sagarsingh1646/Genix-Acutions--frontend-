@@ -17,7 +17,7 @@ const ExploreIntro = () => {
     const fetchAuctions = async () => {
       try {
         const response = await fetch(
-          "http://13.201.80.101:3002/api/v1/auctions"
+          "https://whisperoo.in/api/v1/auctions"
         );
         const data = await response.json();
         setAuctions(data);
